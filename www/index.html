@@ -31,29 +31,32 @@ under the License.
   <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
 
   <link rel="stylesheet" type="text/css" href="css/index.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <title>Cordova Examples</title>
 </head>
 
 <body>
-  <div id = 'map-screen' style="display:none">
-    <div id="googleMap" style="position:absolute;top:0;left:0;right:0;bottom:0;"></div>
 
-    <div id="actions" class="demoaction">
 
-    </div>
+  <div id="splashscreen">
+  <img src="https://pbs.twimg.com/profile_images/775301770151014400/s2ansX13.jpg" width="100%" height="100%"/>
+</div>
+<div id = 'map-screen' style="display:none">
+  <div id="googleMap" style="position:absolute;top:0;left:0;right:0;bottom:0;"></div>
 
-    <div id="watchlog" class="demowatch"><div class="centerText">-</div></div>
-    <div class="app">
-      <div id="deviceready" class="blink">
-        <p class="event listening">Connecting to Device</p>
-        <p class="event received">Device is Ready</p>
-      </div>
-    </div>
+  <div id="actions" class="demoaction">
+
   </div>
 
-  <button id = 'splash-screen' style="position:absolute; top: 50%; text-align: center;">
-    <img src='../img/android/xxhdpi.png'/>
-  </button>
+  <div id="watchlog" class="demowatch"><div class="centerText">-</div></div>
+  <div class="app">
+    <div id="deviceready" class="blink">
+      <p class="event listening">Connecting to Device</p>
+      <p class="event received">Device is Ready</p>
+    </div>
+  </div>
+</div>
+<div>
 
   <!-- API Keys for the app -->
   <script type="text/javascript" src="js/APIKeys.js"></script>
@@ -108,7 +111,11 @@ under the License.
     cordovaExample.startPositioning();
     mapScreen.style.display = 'block';
     splashScreen.style.display = 'none';
+    $(this).parent('#splashscreen').fadeOut(500);
+    alert('toast');
   }
+
+
 
   </script>
 </body>
