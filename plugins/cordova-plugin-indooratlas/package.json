@@ -1,0 +1,92 @@
+{
+  "_args": [
+    [
+      {
+        "raw": "https://github.com/IndoorAtlas/cordova-plugin.git",
+        "scope": null,
+        "escapedName": null,
+        "name": null,
+        "rawSpec": "https://github.com/IndoorAtlas/cordova-plugin.git",
+        "spec": "git+https://github.com/IndoorAtlas/cordova-plugin.git",
+        "type": "hosted",
+        "hosted": {
+          "type": "github",
+          "ssh": "git@github.com:IndoorAtlas/cordova-plugin.git",
+          "sshUrl": "git+ssh://git@github.com/IndoorAtlas/cordova-plugin.git",
+          "httpsUrl": "git+https://github.com/IndoorAtlas/cordova-plugin.git",
+          "gitUrl": "git://github.com/IndoorAtlas/cordova-plugin.git",
+          "shortcut": "github:IndoorAtlas/cordova-plugin",
+          "directUrl": "https://raw.githubusercontent.com/IndoorAtlas/cordova-plugin/master/package.json"
+        }
+      },
+      "C:\\Users\\nate_schmidt\\Hackathon\\sdk-cordova-examples\\CordovaExamples\\node_modules"
+    ]
+  ],
+  "_from": "git+https://github.com/IndoorAtlas/cordova-plugin.git",
+  "_id": "cordova-plugin-indooratlas@1.2.0",
+  "_inCache": true,
+  "_location": "/cordova-plugin-indooratlas",
+  "_phantomChildren": {},
+  "_requested": {
+    "raw": "https://github.com/IndoorAtlas/cordova-plugin.git",
+    "scope": null,
+    "escapedName": null,
+    "name": null,
+    "rawSpec": "https://github.com/IndoorAtlas/cordova-plugin.git",
+    "spec": "git+https://github.com/IndoorAtlas/cordova-plugin.git",
+    "type": "hosted",
+    "hosted": {
+      "type": "github",
+      "ssh": "git@github.com:IndoorAtlas/cordova-plugin.git",
+      "sshUrl": "git+ssh://git@github.com/IndoorAtlas/cordova-plugin.git",
+      "httpsUrl": "git+https://github.com/IndoorAtlas/cordova-plugin.git",
+      "gitUrl": "git://github.com/IndoorAtlas/cordova-plugin.git",
+      "shortcut": "github:IndoorAtlas/cordova-plugin",
+      "directUrl": "https://raw.githubusercontent.com/IndoorAtlas/cordova-plugin/master/package.json"
+    }
+  },
+  "_requiredBy": [
+    "#USER",
+    "/"
+  ],
+  "_resolved": "git+https://github.com/IndoorAtlas/cordova-plugin.git#608e0a3319e6c2213fe438a2800907d80f935833",
+  "_shasum": "cb959c85ab50e2dc0ab7a339d64c37a4def83ea0",
+  "_shrinkwrap": null,
+  "_spec": "https://github.com/IndoorAtlas/cordova-plugin.git",
+  "_where": "C:\\Users\\nate_schmidt\\Hackathon\\sdk-cordova-examples\\CordovaExamples\\node_modules",
+  "author": {
+    "name": "IndoorAtlas"
+  },
+  "bugs": {
+    "url": "https://github.com/IndoorAtlas/cordova-plugin/issues"
+  },
+  "cordova": {
+    "id": "cordova-plugin-indooratlas",
+    "platforms": [
+      "android",
+      "ios"
+    ]
+  },
+  "dependencies": {},
+  "description": "Cordova plugin using IndoorAtlas positioning API.",
+  "devDependencies": {},
+  "gitHead": "608e0a3319e6c2213fe438a2800907d80f935833",
+  "homepage": "https://github.com/IndoorAtlas/cordova-plugin#readme",
+  "keywords": [
+    "cordova",
+    "IndoorAtlas",
+    "geolocation",
+    "ecosystem:cordova",
+    "cordova-android"
+  ],
+  "license": "Apache 2.0",
+  "name": "cordova-plugin-indooratlas",
+  "optionalDependencies": {},
+  "readme": "# IndoorAtlas Cordova Plugin 1.2 with IndoorAtlas SDK 2.4\r\n\r\nThis Cordova plugin provides information about the device's location inside finger printed buildings and uses the [IndoorAtlas location APIs](http://docs.indooratlas.com/cordova/api-documentation).\r\n\r\n## Documentation\r\nDocumentation for the plugin is available in [http://docs.indooratlas.com/cordova](http://docs.indooratlas.com/cordova).\r\n",
+  "readmeFilename": "README.md",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/IndoorAtlas/cordova-plugin.git"
+  },
+  "version": "1.2.0"
+}

@@ -1,0 +1,21 @@
+{
+    "name": "com.indooratlas.cordovaexamples",
+    "version": "1.0.0",
+    "displayName": "CordovaExamples",
+    "cordova": {
+        "platforms": [
+            "android"
+        ],
+        "plugins": {
+            "cordova-plugin-indooratlas": {},
+            "cordova-plugin-spinner": {},
+            "cordova-plugin-whitelist": {}
+        }
+    },
+    "dependencies": {
+        "cordova-android": "~6.2.3",
+        "cordova-plugin-indooratlas": "https://github.com/IndoorAtlas/cordova-plugin.git",
+        "cordova-plugin-spinner": "~1.1.0",
+        "cordova-plugin-whitelist": "1"
+    }
+}
