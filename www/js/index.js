@@ -107,7 +107,8 @@ var cordovaExample = {
       }
 
     }
-    catch(error) {alert(error)};
+    catch(error) {//alert(error)
+    };
   },
 
   // Sets position of the location
@@ -115,7 +116,7 @@ var cordovaExample = {
     // Check if the floorplan is set
     if (IA_FLOORPLAN_ID != "") {
 
-      alert("Setting location with floorplan ID: " + IA_FLOORPLAN_ID);
+      //alert("Setting location with floorplan ID: " + IA_FLOORPLAN_ID);
 
       try {
         SpinnerPlugin.activityStart('Setting location');
@@ -125,15 +126,15 @@ var cordovaExample = {
         };
         var fail = function(error) {
           SpinnerPlugin.activityStop();
-          alert(error.message);
+          //alert(error.message);
         };
         IndoorAtlas.setPosition(win, fail, options);
       }
       catch(error) {
-        alert(error);
+        //alert(error);
       }
     } else {
-      alert("Floorplan ID is not set");
+      //alert("Floorplan ID is not set");
     }
   },
   // Starts positioning the user in the given floorplan area
@@ -153,11 +154,40 @@ var cordovaExample = {
     IndoorAtlas.getCurrentPosition(this.showLocation, this.IAServiceFailed);
   },
 
+  addPin: function(long, lat, name) {
+    if(name == 'happy') {
+      this.happyMarker = new google.maps.Marker({
+       position:  new google.maps.LatLng(long, lat),
+       map: venuemap,
+       animation: google.maps.Animation.DROP
+     });
+     var hapinfowindow = new google.maps.InfoWindow({
+         content: "<div>Happy capacity: 8 Includes: projector, phone, and whiteboard<br><button>BOOK NOW!</button></div>",
+         position: new google.maps.LatLng(30.484313, -97.662359)
+       });
+       this.happyMarker.addListener('click', function() {
+         hapinfowindow.open(venuemap, this.happyMarker);
+       });
+    } else {
+      this.stephenMarker = new google.maps.Marker({
+       position:  new google.maps.LatLng(long, lat),
+       map: venuemap,
+       animation: google.maps.Animation.DROP
+     });
+      var infowindow = new google.maps.InfoWindow({
+          content: "<div><img width='254' height='355' src='img/android/stephen.jpg' /><br>Stephen Paladines is an undergrad intern for Dell. CURRENTLY ONLINE</div>"
+      });
+      this.stephenMarker.addListener('click', function() {
+        infowindow.open(venuemap, this.stephenMarker);
+      });
+    }
+  },
+
   // Stops positioning the user
   stopPositioning: function() {
     IndoorAtlas.clearWatch(this.watchId);
     cordovaExample.stopRegionWatch();
-    alert("IndoorAtlas positioning stopped");
+    //alert("IndoorAtlas positioning stopped");
   },
   // Starts watching changes in region id
   startRegionWatch: function() {
@@ -187,14 +217,17 @@ var cordovaExample = {
       strokeWeight: 1
     };
     var mapProp = {
-      center: new google.maps.LatLng(65.060848804763, 25.4410770535469),
-      zoom: 15,
+      center: new google.maps.LatLng(30.485834, -97.662351),
+      zoom: 14,
       mapTypeId: google.maps.MapTypeId.ROADMAP,
       mapTypeControl: false,
       streetViewControl: false
     };
+
     venuemap = new google.maps.Map(document.getElementById('googleMap'), mapProp);
+
     cordovaExample.mapOverlay({regionId: IA_FLOORPLAN_ID});
+
   },
 
   // Sets an overlay to Google Maps specified by the floorplan coordinates and bearing
@@ -209,14 +242,14 @@ var cordovaExample = {
       };
       var fail = function(error) {
         SpinnerPlugin.activityStop();
-        alert(error.message);
+        //alert(error.message);
       };
 
       // Gets the floorplan with the given region ID (floorplan ID) and then continues as specified earlier
       IndoorAtlas.fetchFloorPlanWithId(position.regionId, win, fail);
     }
     catch(error) {
-      alert(error);
+      ////alert(error);
     }
   },
 
@@ -273,7 +306,7 @@ var cordovaExample = {
     };
     var fail = function(error) {
       SpinnerPlugin.activityStop();
-      alert(error.message);
+      //alert(error.message);
     };
 
     // Gets the floorplan with the given region ID (floorplan ID) and then continues as specified earlier
@@ -300,4 +333,5 @@ var cordovaExample = {
     var lengths = {degreeOfLatitudeInMeters: lengthOfDegreeOfLatitudeInMeters, degreeOfLongitudeInMeters: lengthOfDegreeOfLongitudeInMeters};
     return lengths
   }
+
 };

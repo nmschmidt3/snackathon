@@ -24,7 +24,7 @@ KIND, either express or implied.  See the License for the
 specific language governing permissions and limitations
 under the License.
 -->
-<html>
+<!--<html>
 <head>
   <meta name="format-detection" content="telephone=no">
   <meta name="msapplication-tap-highlight" content="no">
@@ -39,7 +39,8 @@ under the License.
 
 
   <div id="splashscreen">
-  <img src="https://pbs.twimg.com/profile_images/775301770151014400/s2ansX13.jpg" width="100%" height="100%"/>
+    <input type="button" id ="enterButton"> <img src="https://pbs.twimg.com/profile_images/775301770151014400/s2ansX13.jpg" width="100%" height="100%" /></input>
+  <!--<img src="https://pbs.twimg.com/profile_images/775301770151014400/s2ansX13.jpg" width="100%" height="100%"/
 </div>
 <div id = 'map-screen' style="display:none">
   <div id="googleMap" style="position:absolute;top:0;left:0;right:0;bottom:0;"></div>
@@ -58,32 +59,35 @@ under the License.
 </div>
 <div>
 
-  <!-- API Keys for the app -->
+
   <script type="text/javascript" src="js/APIKeys.js"></script>
 
-  <!-- Google Maps Javascript API, Api key is set in www/js/APIKeys.js -->
+
   <script src='https://maps.googleapis.com/maps/api/js?key=' id='googleMapsKey'></script>
   <script>
   var googleMapsKey = document.getElementById('googleMapsKey');
   googleMapsKey.src = 'https://maps.googleapis.com/maps/api/js?key=' + GOOGLE_API_KEY;
   </script>
 
-  <!-- This class helps to rotate the overlay for Google Maps -->
+
   <script type="text/javascript" src="js/ClassForMapOverlay.js"></script>
 
-  <!-- Functionality of the app -->
+
   <script type="text/javascript" src="js/index.js"></script>
 
   <script type="text/javascript" src="cordova.js"></script>
 
-  <!-- Script to set up the API Keys for function calls -->
+
   <script>
   var setPositionButton = document.getElementById('setPositionButton');
   var startPositioningButton = document.getElementById('startPositioningButton');
   var stopPositioningButton = document.getElementById('stopPositioningButton');
   var splashScreen = document.getElementById('splash-screen');
   var mapScreen = document.getElementById('map-screen');
-
+  var enterButton = document.getElementById('enterButton');
+  var x = 0;
+  x++;
+  alert(x);
   stopPositioningButton.disabled = true;
   stopPositioningButton.style.background = '#D3D3D3';
   setPositionButton.onclick = function() {
@@ -107,16 +111,121 @@ under the License.
     stopPositioningButton.style.background = '#D3D3D3';
     cordovaExample.stopPositioning();
   };
+  enterButton.onclick = function () {
+    enterButton.innerHtml='';
+  };
   splashScreen.onclick = function() {
     cordovaExample.startPositioning();
     mapScreen.style.display = 'block';
     splashScreen.style.display = 'none';
-    $(this).parent('#splashscreen').fadeOut(500);
-    alert('toast');
-  }
+    //$(this).parent('#splashscreen').fadeOut(500);
+  };
 
+  </script>
+</body>
+</html>-->
+<!DOCTYPE html>
 
+<!--
+IndoorAtlas Cordova Plugin Examples
+https://github.com/IndoorAtlas/cordova-plugin
+https://github.com/IndoorAtlas/sdk-cordova-examples
+-->
 
+<!--
+Licensed to the Apache Software Foundation (ASF) under one
+or more contributor license agreements.  See the NOTICE file
+distributed with this work for additional information
+regarding copyright ownership.  The ASF licenses this file
+to you under the Apache License, Version 2.0 (the
+"License"); you may not use this file except in compliance
+with the License.  You may obtain a copy of the License at
+
+http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing,
+software distributed under the License is distributed on an
+"AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+KIND, either express or implied.  See the License for the
+specific language governing permissions and limitations
+under the License.
+-->
+<html>
+<head>
+  <meta name="format-detection" content="telephone=no">
+  <meta name="msapplication-tap-highlight" content="no">
+  <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
+
+  <link rel="stylesheet" type="text/css" href="css/index.css">
+  <title>Cordova Examples</title>
+</head>
+
+<body>
+  <div id='mapPage' style="display:none">
+  <div id="googleMap" style="position:absolute;top:0;left:0;right:0;bottom:0;"></div>
+
+  <div id="actions" class="demoaction">
+    <select>
+        <option value="RoundRock2EF1">Round Rock 2-E-1</option>
+        <option value="RoundRock2EF2">Round Rock 2-E-2</option>
+        <option selected="selected" value="RoundRock2EF3">Round Rock 2-E-3</option>
+        </select>
+    <!--<button class="demobutton" id="startPositioningButton">Start</button>-->
+    <input type="text" id="searchRoom" placeholder="Search room or people">
+    <button class="demobutton" id="searchButton">Search</button>
+  </div>
+
+  <div id="watchlog" class="demowatch"><div class="centerText">-</div></div>
+  <div class="app">
+    <div id="deviceready" class="blink">
+      <p class="event listening">Connecting to Device</p>
+      <p class="event received">Device is Ready</p>
+    </div>
+  </div>
+</div>
+<div id='splashPage' style="display:block">
+  <img src="img/android/Splash.png" width="100%" height="100%"/>
+</div>
+  <!-- API Keys for the app -->
+  <script type="text/javascript" src="js/APIKeys.js"></script>
+
+  <!-- Google Maps Javascript API, Api key is set in www/js/APIKeys.js -->
+  <script src='https://maps.googleapis.com/maps/api/js?key=' id='googleMapsKey'></script>
+  <script>
+  var googleMapsKey = document.getElementById('googleMapsKey');
+  googleMapsKey.src = 'https://maps.googleapis.com/maps/api/js?key=' + GOOGLE_API_KEY;
+  </script>
+
+  <!-- This class helps to rotate the overlay for Google Maps -->
+  <script type="text/javascript" src="js/ClassForMapOverlay.js"></script>
+
+  <!-- Functionality of the app -->
+  <script type="text/javascript" src="js/index.js"></script>
+
+  <script type="text/javascript" src="cordova.js"></script>
+
+  <!-- Script to set up the API Keys for function calls -->
+  <script>
+  //var startPositioningButton = document.getElementById('startPositioningButton');
+  var roomName = document.getElementById('searchRoom');
+  var searchButton = document.getElementById('searchButton');
+  var mapPage = document.getElementById('mapPage');
+  var splashPage = document.getElementById('splashPage');
+  splashPage.onclick = function() {
+    mapPage.style.display = 'block';
+    splashPage.style.display = 'none';
+    cordovaExample.startPositioning();
+  };
+
+  searchButton.onclick = function() {
+    if(roomName.value.toLowerCase() == 'happy') {
+      cordovaExample.addPin(30.484313, -97.662359, 'happy');
+    }
+    if(roomName.value.toLowerCase() == 'stephen paladines') {
+      cordovaExample.addPin(30.484613, -97.662659, 'stephen');
+    }
+
+  };
   </script>
 </body>
 </html>
